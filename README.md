@@ -9,7 +9,7 @@
 2. [AWS Budgets](#aws-budgets)
     * [Resources docs](#resources-docs)
     * [Inputs](#inputs)
-    * [Examples](#examples)
+    * [Example](#example)
 3. [License](#license)
 
 ## Overview
@@ -36,9 +36,24 @@ The below outlines the current parameters and defaults.
 |limit_unit|The budget limit unit. Default is USD|string|USD|No|
 |subscriber_email_addresses|The list of email addresses of notification subscribers|list(string)|[]|No|
 
-### Examples
+### Example
 
-TODO.
+A simple example:
+
+```tf
+module "budgets" {
+  source                     = "git@github.com:cmdlabs/terraform-aws-budgets.git"
+  limit_amount               = 100
+  limit_unit                 = "USD"
+  subscriber_email_addresses = ["alex.harvey@cmd.com.au"]
+}
+```
+
+To apply that:
+
+```text
+▶ terraform apply
+```
 
 ## License
 
