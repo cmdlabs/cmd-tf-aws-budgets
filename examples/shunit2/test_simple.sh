@@ -3,6 +3,13 @@
 
 . shunit2/test_helper.sh
 
+vars=(
+  AWS_ACCOUNT_ID
+  AWS_ACCESS_KEY_ID
+  AWS_SECRET_ACCESS_KEY
+)
+validateVars
+
 testSimple() {
   cd simple
 
