@@ -37,7 +37,7 @@ testSubscriber() {
       --query 'Subscribers[].[SubscriptionType, Address]' --output text
   )"
   assertEquals "unexpected subscription type" "EMAIL" "$subscription_type"
-  assertEquals "unexpected email address" "alex.harvey@cmd.com.au" "$address"
+  assertEquals "unexpected email address" "alex@example.com" "$address"
 }
 
 oneTimeTearDown() {
