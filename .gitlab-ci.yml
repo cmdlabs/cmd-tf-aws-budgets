@@ -6,6 +6,11 @@ stages:
   - destroy
   - publish
 
+variables:
+  AWS_ROLE_NAME: gitlab_runner
+  AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID
+  AWS_PROFILE_NAME: cmdlabtf-master
+
 format:
   stage: format
   tags:
@@ -24,10 +29,6 @@ plan:
   stage: plan
   tags:
     - cmd
-  variables:
-    AWS_ROLE_NAME: gitlab_runner
-    AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID
-    AWS_PROFILE_NAME: cmdlabtf-master
   script:
     - make plan
 
@@ -35,10 +36,6 @@ apply:
   stage: apply
   tags:
     - cmd
-  variables:
-    AWS_ROLE_NAME: gitlab_runner
-    AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID
-    AWS_PROFILE_NAME: cmdlabtf-master
   script:
     - make apply
 
@@ -46,10 +43,6 @@ destroy:
   stage: destroy
   tags:
     - cmd
-  variables:
-    AWS_ROLE_NAME: gitlab_runner
-    AWS_ACCOUNT_ID: $AWS_ACCOUNT_ID
-    AWS_PROFILE_NAME: cmdlabtf-master
   script:
     - make destroy
 
