@@ -1,5 +1,5 @@
 <!-- vim: set ft=markdown: -->
-![CMD Solutions](https://s3-ap-southeast-2.amazonaws.com/cmd-website-images/CMDlogo.jpg)
+![CMD Solutions|medium](https://s3-ap-southeast-2.amazonaws.com/cmd-website-images/CMDlogo.jpg)
 
 # terraform-aws-budgets
 
@@ -9,7 +9,6 @@
 2. [AWS Budgets](#aws-budgets)
     * [Resources docs](#resources-docs)
     * [Inputs](#inputs)
-    * [Example](#example)
 3. [License](#license)
 
 ## Overview
@@ -32,28 +31,16 @@ The below outlines the current parameters and defaults.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
-|limit_amount|The budget limit amount|number|""|No|
+|limit_amount|The budget limit amount|number|""|Yes|
 |limit_unit|The budget limit unit. Default is USD|string|USD|No|
-|subscriber_email_addresses|The list of email addresses of notification subscribers|list(string)|[]|No|
-
-### Example
-
-A simple example:
-
-```tf
-module "budgets" {
-  source                     = "git@github.com:cmdlabs/terraform-aws-budgets.git"
-  limit_amount               = 100
-  limit_unit                 = "USD"
-  subscriber_email_addresses = ["alex@example.com"]
-}
-```
-
-To apply that:
-
-```text
-▶ terraform apply
-```
+|direct_subscriber_email_addresses|The list of email addresses of direct notification subscribers. This bypasses SNS Topic|list(string)|[]|No|
+|time_period_start|The start of the time period covered by the budget|string|2017-07-01_00:00|No|
+|time_period_end|The end of the time period covered by the budget|string|2087-06-15_00:00|No|
+|time_unit|The length of time until a budget resets the actual and forecasted spend. Valid values: MONTHLY, QUARTERLY, ANNUALLY|string|MONTHLY|No|
+|comparison_operator|Comparison operator to use to evaluate the condition. Can be LESS_THAN, EQUAL_TO or GREATER_THAN|string|GREATER_THAN|No|
+|threshold|Threshold when the notification should be sent|number|100|No|
+|threshold_type|What kind of threshold is defined. Can be PERCENTAGE OR ABSOLUTE_VALUE|string|PERCENTAGE|No|
+|notification_type|What kind of budget value to notify on. Can be ACTUAL or FORECASTED|string|FORECASTED|No|
 
 ## License
 
