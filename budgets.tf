@@ -1,21 +1,18 @@
-locals {
-  name = "budget"
-}
-
 resource "aws_budgets_budget" "budget" {
-  name              = local.name
+  name              = "Initial terraform budget"
   budget_type       = "COST"
   limit_amount      = var.limit_amount
   limit_unit        = var.limit_unit
-  time_period_end   = "2087-06-15_00:00"
-  time_period_start = "2017-07-01_00:00"
-  time_unit         = "MONTHLY"
+  time_period_end   = var.time_period_end
+  time_period_start = var.time_period_start
+  time_unit         = var.time_unit
 
   notification {
-    comparison_operator        = "GREATER_THAN"
-    threshold                  = 100
-    threshold_type             = "PERCENTAGE"
-    notification_type          = "FORECASTED"
-    subscriber_email_addresses = var.subscriber_email_addresses
+    comparison_operator        = var.comparison_operator
+    threshold                  = var.threshold
+    threshold_type             = var.threshold_type
+    notification_type          = var.notification_type
+    subscriber_email_addresses = var.direct_subscriber_email_addresses
+    subscriber_sns_topic_arns  = [aws_sns_topic.budgets_topic.arn]
   }
 }
