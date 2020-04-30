@@ -13,3 +13,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [0.1.0] 2019-09-28
 - Initial release @alex.harvey
+
+## [0.2.0] 2020-04-30
+- Added ACTUAL, FORECASTED, RI AND SAVINGS PLAN BUDGETS @adam.durbin

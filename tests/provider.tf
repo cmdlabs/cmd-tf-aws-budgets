@@ -1,5 +1,5 @@
 provider "aws" {
   region                  = "ap-southeast-2"
-  profile                 = "cmdlabtf-master"
+  profile                 = "idp-sandpit2"
   skip_metadata_api_check = true
 }
