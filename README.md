@@ -44,8 +44,8 @@ The below outlines the current parameters and defaults.
 |enable_ri_ec2_utilization_budget|Flag to enable monitoring of 100% utilization of EC2 RIs in account|boolean|false|No|
 |enable_ri_rds_utilization_budget|Flag to enable monitoring of 100% utilization of RDS RIs in account|boolean|false|No|
 |enable_savings_plan_budget|Flag to enable monitoring of 100% utilization of Savings Plans in account|boolean|false|No|
-|enable_actual_cost_budget|Flag to enable Actual budget amount (limit set in `limit_amount`)|boolean|false|No|
-|enable_forecast_cost_budget|Flag to enable Forecasted budget amount (limit set in `limit_amount`)|boolean|false|No|
+|enable_actual_cost_budget|Flag to enable Actual budget amount (limit set in `limit_amount`)|boolean|true|No|
+|enable_forecast_cost_budget|Flag to enable Forecasted budget amount (limit set in `limit_amount`)|boolean|true|No|
 |limit_amount|The budget limit amount|number|""|Yes|
 |limit_unit|The budget limit unit. Default is USD|string|USD|No|
 |direct_subscriber_email_addresses|The list of email addresses of direct notification subscribers. This bypasses SNS Topic|list(string)|[]|No|
