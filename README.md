@@ -3,7 +3,17 @@
 
 # terraform-aws-budgets
 
-#### Table of contents
+This module handles the deployment of opinionated budgets with notifications. The budgets are opinionated to provide simplicity of management and consistency of alerting.
+
+Budgets supported include:
+
+- Forecasted Budget
+- Actual Budget
+- 100% Utilization of Savings Plans
+- 100% Utilization of EC2 Reserved Instances
+- 100% Utilization of RDS Reserved Instances
+
+## Table of contents
 
 1. [Overview](#overview)
 2. [AWS Budgets](#aws-budgets)
@@ -31,6 +41,11 @@ The below outlines the current parameters and defaults.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:--------:|
+|enable_ri_ec2_utilization_budget|Flag to enable monitoring of 100% utilization of EC2 RIs in account|boolean|false|No|
+|enable_ri_rds_utilization_budget|Flag to enable monitoring of 100% utilization of RDS RIs in account|boolean|false|No|
+|enable_savings_plan_budget|Flag to enable monitoring of 100% utilization of Savings Plans in account|boolean|false|No|
+|enable_actual_cost_budget|Flag to enable Actual budget amount (limit set in `limit_amount`)|boolean|false|No|
+|enable_forecast_cost_budget|Flag to enable Forecasted budget amount (limit set in `limit_amount`)|boolean|false|No|
 |limit_amount|The budget limit amount|number|""|Yes|
 |limit_unit|The budget limit unit. Default is USD|string|USD|No|
 |direct_subscriber_email_addresses|The list of email addresses of direct notification subscribers. This bypasses SNS Topic|list(string)|[]|No|
