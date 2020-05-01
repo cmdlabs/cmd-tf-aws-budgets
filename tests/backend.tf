@@ -8,7 +8,7 @@ terraform {
     dynamodb_table          = "cmdlabtf-terraform-lock"
     skip_metadata_api_check = true
 
-  # Uncomment to utilise local testing in CMD Sandpit
+    # Uncomment to utilise local testing in CMD Sandpit
     # bucket                  = "cmdlab-sandpit2-terraform-backend"
     # key                     = "module-cmd-tf-aws-budgets"
     # region                  = "ap-southeast-2"
