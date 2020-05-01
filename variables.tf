@@ -72,7 +72,7 @@ variable "notification_type" {
 variable "enable_ri_rds_utilization_budget" {
   description = "If set to true, enable RDS - RI Utilization Budget"
   type        = bool
-  default     = false  
+  default     = false
 }
 
 variable "enable_ri_ec2_utilization_budget" {
@@ -84,17 +84,17 @@ variable "enable_ri_ec2_utilization_budget" {
 variable "enable_savings_plan_budget" {
   description = "If set to true, enable Savings Plan Utilization Budget"
   type        = bool
-  default     = false  
+  default     = false
 }
 
 variable "enable_actual_cost_budget" {
   description = "If set to true, enable Actual Cost Budget"
   type        = bool
-  default     = true  
+  default     = true
 }
 
 variable "enable_forecast_cost_budget" {
   description = "If set to true, enable Forecast Cost Budget"
   type        = bool
-  default     = true  
+  default     = true
 }
