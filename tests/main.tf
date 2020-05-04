@@ -8,6 +8,6 @@ module "budgets" {
   enable_forecast_cost_budget       = true
   limit_amount                      = 100
   limit_unit                        = "USD"
-  direct_subscriber_email_addresses = ["adam.durbin@cmd.com.au"]
+  direct_subscriber_email_addresses = ["adam@example.com"]
 
 }
