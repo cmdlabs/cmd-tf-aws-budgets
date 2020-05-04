@@ -1,5 +1,5 @@
 module "budgets" {
-  source = "github.com/cmdlabs/tf-modules/cmd-tf-aws-budgets?ref=0.2.1"
+  source = "github.com/cmdlabs/tf-modules/cmd-tf-aws-budgets?ref=0.2.2"
 
   enable__actual_cost_budget        = false
   enable_forecast_cost_budget       = true
